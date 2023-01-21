@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SentimentAnalysisWebApp {
+public class MainWebApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SentimentAnalysisWebApp.class, args);
+		SpringApplication.run(MainWebApp.class, args);
 	}
 }
