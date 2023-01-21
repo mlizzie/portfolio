@@ -4,12 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sa.web</groupId>
-	<artifactId>sentiment-analysis-web</artifactId>
+	<artifactId>web-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>sentiment-analysis-web</name>
-	<description>Web Application that just forwards the call to sentiment-analysis python api</description>
+	<name>web-app-portfolio</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

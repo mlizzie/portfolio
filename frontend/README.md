@@ -1,6 +1,14 @@
-# Personal Portfolio Website
-This project is one of the results of my journey learning frontend with react.
+## Starting the Web App Locally
+` $ yarn start `
 
+## Building the application
+` $ yarn build `
 
-# Preview
-![screencapture-localhost-3000-2022-12-20-20_12_19](https://user-images.githubusercontent.com/73756341/208675550-16881030-8ac9-451f-9cbb-85ebc9ffca97.png)
+## Building the container
+` $ docker build -f Dockerfile -t $DOCKER_USER_ID/sentiment-analysis-frontend . `
+
+## Running the container
+` $ docker run -d -p 80:80 $DOCKER_USER_ID/sentiment-analysis-frontend `
+
+## Pushing the container
+` $ docker push $DOCKER_USER_ID/sentiment-analysis-frontend `
