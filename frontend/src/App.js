@@ -6,22 +6,20 @@ import {SiTelegram} from 'react-icons/si'
 import React from 'react';
 import $ from 'jquery';
 
-
-
-
 function App() {
   return (
     <main>
     <div className='px-8 md:px-20 lg:px-40'>
     <Navbar />
 
-     <section id='home' className='min-h-screen text-center mt-4 flex flex-col justify-center '>
+     <section id='home' className=' text-center mt-4 flex flex-col justify-center '>
         <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-56 h-56 relative overflow-hidden md:h-96 md:w-96 mb-2">
           <img src='/avatar.png' layout="fill" objectFit="cover" />
         </div>
         <h1 className='text-3xl md:text-5xl font-medium text-teal-500'>Nikita Koryakov</h1>
         <h3 className='text-xl md:text-2xl'>DevOps Engineer</h3>
-        <p className='text-md py-1 text-gray-800 md:text-xl'>Enthusiastic and motivated self-learning about information technology. Focused on cloud computing, devsecops, and web development. Now I am looking for more experience in my field. </p>
+        <p className='text-md py-1 text-gray-800 md:text-xl'> I am a DevOps middle engineer. Ambitious, eager to keep growing and evolving in my profession.
+            Now I am looking for more experience in my field. </p>
         <div className='text-5xl py-4 flex justify-center gap-16 text-gray-600'>
           <a href={`https://www.linkedin.com/in/nikita-koryakov-196b13244/`}> <AiFillLinkedin /> </a>
           <a href={`https://github.com/mlizzie`}><AiFillGithub /> </a>
@@ -75,7 +73,7 @@ function App() {
 
     <section id='pipeline' className='mt-10 '>
       <h1 className='text-xl font-medium'>CI/CD</h1>
-      <p className='mt-1 text-md'>Here are some projects that I have managed.</p>
+      <p className='mt-1 text-md'>Here are some projects that I have make.</p>
     </section>
     <Content/>
   
@@ -92,7 +90,7 @@ function App() {
           </li>
           <li className='flex items-center gap-2'>
             <AiFillEnvironment />
-            <p>Moscow</p>
+            <p>Moscow </p>
           </li>
           <li className='flex items-center gap-2'>
             <AiFillPhone/>
@@ -112,7 +110,6 @@ function App() {
           © 2023
           <a href="https://t.me/nikita_koryakov"> Nikita   Koryakov</a>. All Rights Reserved.
         </p>
-
       </div>
       
     </section>
@@ -132,7 +129,7 @@ class Content extends React.Component {
     }
     componentDidMount() {
         $.ajax({
-            url: "http://localhost:8080/projects",
+            url: "35.222.203.126:8080/projects",
             type: "GET",
             dataType: 'json',
             ContentType: 'application/json',
@@ -150,22 +147,21 @@ class Content extends React.Component {
         return (
             <section id='Portfolio' className='mt-10 '>
             <h1 className='text-xl font-medium'>Portfolio</h1>
-            <p className='mt-1 text-md'>Here are some of the certifications I have.</p>
+            <p className='mt-1 text-md'>Here are some projects that I have make.</p>
 
             <div className='flex flex-col md:flex-row gap-8 mt-4 shadow-lg'>
             
             {this.state.data.map(function (item, key) {
                 return(
                   <>
-                  <div  className='w-full md:w-2/6 shadow-md rounded '>
-                <div  key={key}  className='h-48 md:h-56 rounded-t-md relative object-fit-contain '>
-                    <img src={item.imageUrl}  />
+                  <div  className='w-full md:w-2/6 shadow-md rounded  shadow-lg border border-1'>
+                <div  key={key}  className='h-48 md:h-56 rounded-t-md relative overflow-hidden '>
+                    <img src={item.imageUrl}   layout="intrinsic" objectFit="contain" className='h-48 md:h-56  mx-auto'  />
                 </div>
-                <div className='p-4'>
+                <div className='p-4 h-48 md:h-56'>
                 <h1 className='text-xl font-medium'>{item.name}</h1>
-                
                 <p className=''>{item.description}</p>
-                <p className='text-sm text-gray-500'> <a href={item.gitUrl}>Github</a></p>
+                <a class="button mt-10" href={item.gitUrl}>GitHub</a>
               </div>
               </div>
               </>

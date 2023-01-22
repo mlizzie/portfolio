@@ -1,8 +1,8 @@
 ## Starting the Web App Locally
-` $ yarn start `
+` $ npm start `
 
 ## Building the application
-` $ yarn build `
+` $ npm run build `
 
 ## Building the container
 ` $ docker build -f Dockerfile -t $DOCKER_USER_ID/frontend-porfolio . `
