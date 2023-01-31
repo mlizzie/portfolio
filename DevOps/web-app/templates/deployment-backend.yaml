@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.backend.deployment.name}}-{{.Release.Name}}
+  labels:
+    app: {{.Values.backend.deployment.name}}-{{.Release.Name}}
+spec:
+  selector:
+    matchLabels:
+      app: {{.Values.backend.deployment.name}}
+  replicas: {{.Values.backend.deployment.replicas}}
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: {{.Values.backend.deployment.name}}
+    spec:
+      containers:
+      - image:  {{.Values.backend.image.name}}:{{.Values.backend.image.tag}}
+        imagePullPolicy: Always
+        name: {{.Values.backend.deployment.name}}
+        ports:
+          - containerPort: {{.Values.backend.service.port}}

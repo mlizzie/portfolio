@@ -1,0 +1,36 @@
+backend:
+  deployment:
+    name: sa-web-app
+    replicas: 1
+  container:
+    name:  sa-web-app
+    resources: {}
+  #      limits:
+  #        memory: 1024Mi
+  #        cpu: 500m
+  #      requests:
+  #        memory: 512Mi
+  #        cpu: 100m
+  service:
+    name:
+    port: 8080
+  image:
+    name: mlizzie/web-app-portfolio
+    tag: latest
+    pullPolicy: IfNotPresent
+
+
+frontend:
+  deployment:
+    name: sa-frontend
+    replicas: 1
+  container:
+    name: sa-frontend
+    resources: {}
+  service:
+    name:
+    port: 80
+  image:
+    name: mlizzie/frontend-porfolio
+    tag: latest
+    pullPolicy: IfNotPresent

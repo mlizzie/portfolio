@@ -1,10 +1,11 @@
-//import { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Navbar from './Navbar'
 import {AiFillLinkedin, AiFillGithub, AiFillInstagram, AiFillMail, AiFillEnvironment, AiFillPhone} from 'react-icons/ai'
 import {SiTelegram} from 'react-icons/si'
 import React from 'react';
 import $ from 'jquery';
+
 
 function App() {
   return (
@@ -73,7 +74,10 @@ function App() {
 
     <section id='pipeline' className='mt-10 '>
       <h1 className='text-xl font-medium'>CI/CD</h1>
-      <p className='mt-1 text-md'>Here are some projects that I have make.</p>
+      <p className='mt-1 text-md'>CI/CD is implemented using GitLab. Triggered only by the "release-*" format tag.</p>
+      <div className='w-full shadow-lg rounded-md px-4 py-5 flex flex-col items-center text-center gap-1'>
+        <img src='screen_ci-cd.png' className='' alt='gambar' />
+      </div>
     </section>
     <Content/>
   
@@ -129,7 +133,7 @@ class Content extends React.Component {
     }
     componentDidMount() {
         $.ajax({
-            url: "35.222.203.126:8080/projects",
+            url: "http://35.222.203.126:8080/projects",
             type: "GET",
             dataType: 'json',
             ContentType: 'application/json',
@@ -161,7 +165,7 @@ class Content extends React.Component {
                 <div className='p-4 h-48 md:h-56'>
                 <h1 className='text-xl font-medium'>{item.name}</h1>
                 <p className=''>{item.description}</p>
-                <a class="button mt-10" href={item.gitUrl}>GitHub</a>
+                <a class="button mt-5" href={item.gitUrl}>GitHub</a>
               </div>
               </div>
               </>

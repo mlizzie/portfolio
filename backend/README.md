@@ -1,5 +1,5 @@
 ## Packaging the application
-` $ mvn install`
+` $ mvn  clean install`
 
 ## Running the application
 ` $ java -jar web-app-0.0.1-SNAPSHOT.jar  ` 
